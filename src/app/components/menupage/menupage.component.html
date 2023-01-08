@@ -1,0 +1,57 @@
+<div class="container mt-5 mb-5">
+
+    <div class="row">
+
+        <div class="col-lg-6" *ngIf="menuData">
+            <a routerLink="../../menu" class="btn btn-sm btn-dark mb-3">Back</a>
+            <img src="{{menuData[0].glassesImg}}" width="100%"/>
+            <h1 class="mt-3">{{menuData[0].glassesName}}</h1>
+            <p>{{menuData[0].glassesDetails}}</p>
+            <p >{{menuData[0].glassesPrice | currency:'USD'}}</p>
+        </div>
+
+            <div class="col-lg-6 col-lg-12">
+                
+                <h1>Enter Your Details</h1>
+                <form >
+
+                    <input type="text" class="form-control" placeholder="Enter Your Full Name"/>
+                    <input type="text" class="form-control mt-2" placeholder="Enter Your Mobile"/>
+                    <textarea class="form-control mt-2" placeholder="Enter Your Adress" ></textarea>
+                    
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Press</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>{{a}}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-success" (click)="OnAdd()"><i class="bi bi-plus"></i></button>
+                                <button type="button" class="btn btn-danger" (click)="OnSupp()"><i class="bi bi-dash"></i></button>
+                            </td>
+                          
+                          </tr>
+                       
+                       
+                        </tbody>
+                      </table>
+                    <button class="btn btn-md btn-dark mt-3" type="button" (click)="addToCart(menuData[0])">Place Order</button>
+                    
+
+                </form>
+
+
+            </div>
+
+
+    </div>
+
+</div>

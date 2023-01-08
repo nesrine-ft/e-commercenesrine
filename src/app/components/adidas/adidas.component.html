@@ -1,0 +1,336 @@
+<main class='wrapper'>
+    <main class="site-main wrapper">
+    <section class="inner-banner p0 wide">
+    <div class="inner-banner__row clearfix">
+    <div class="inner-banner__col right">
+    <ul class="inner-banner__images js-banner-slider brand_container">
+    <li class="inner-banner__image full_bg test" style="background-image: url('https://www.rivoligroup.com/application/files/cache/8542bb19aaf81d5a267f511a71e0bbe8.jpg');">
+    <div class="inner-banner__title">
+    <h2>{{brand}}</h2>
+    </div>
+    </li>
+    </ul>
+    <div class="inner-banner__features clearfix">
+    <div class="inner-banner__features__col">
+    <p><p>Inspired by the rich sporting heritage of adidas &ndash; one of the world&rsquo;s leading sports brands and a global designer and developer of athletic footwear and apparel &ndash; adidas Originals is a lifestyle brand founded in 2001. With the adidas archive at its foundation, adidas Originals continues to evolve the brand&rsquo;s legacy through its commitment to product innovation and its ability to filter the creativity and courage found on courts and sporting arenas through the lens of contemporary youth culture. Marked by the iconic Trefoil logo that was first used in 1972 and championed by those that continue to shape and define creative culture, adidas Originals continues to lead the way as the pioneering sportswear brand for the street.</p>
+    
+    <p>The adidas brand has a long history and deep-rooted connection with sport. Its broad and diverse sports portfolio, from major global sports such as football and running, to regional heartbeat sports such as American football and rugby, has enabled the brand to transcend cultures and become one of the most recognized and iconic global brands, on and off the field of play. The adidas brand&rsquo;s mission is to be the best sports brand in the world, by the best sports products in the world.</p>
+    
+    <p>The Sport collection focuses on best-in-performance athletic eyewear, contemporary and versatile it takes you from streets and stadiums to trails and tracks. adidas Sport Eyewear elevates every moment, protecting your sight and transforming your vision allowing you to see all details in all conditions.</p>
+    
+    <p>Find your fit, follow the feeling and keep your head in the game</p>
+   
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    </section>
+    <section class="brand-categories parallax-text-parent">
+    
+    <div class="col-sm-6 left">
+    <h3 class="h6">Products</h3>
+    </div>
+    <nav>
+      <ul><li class="cart">
+        <a href="cart.html">
+          Cart <span>0</span>
+        </a>
+    </li>
+    </ul></nav>
+    <section class="product">
+        <div class="item">
+          <img src="https://cdn.adidaseyewear.com.filoblu.com/rx/ofmt_webp/media/catalog/product/S/P/SP00065791Q_01.jpg" name="blueadidas.jpg">
+          <a   class="try-btn" id="adidas1">Try Now</a>
+    <p class="type">blue adidas</p>
+          <h6 class="price">$290</h6>
+          <span></span>
+          <button class="add-cart cart1">Add to cart</button>
+          <input type="hidden" value="20" />
+    
+          
+        </div>
+        <div class="item">
+          <img src="https://cdn.adidaseyewear.com.filoblu.com/rx/ofmt_webp/media/catalog/product/O/R/OR00705402U_01.jpg" name="pinkadidas">
+          <a   class="try-btn" id="adidas2">Try Now</a>
+    <p class="type">pink adidas</p>
+          <h6 class="price">$233.64</h6>
+          <span></span>
+          <button class="add-cart cart2">Add to cart</button>
+          <input type="hidden" value="20" />
+    
+        </div>
+        <div class="item">
+          <img src="https://eyewearsa.co.za/image/catalog/Adidas2/SP000491Q.jpg">
+          <a  class="try-btn" id="adidas3">Try Now</a>
+    <p class="type">blue-grey adidas</p>     
+     <h6 class="price">$345.89</h6>
+          <span></span>
+          <button class="add-cart cart4" href="#">Add to Cart</button>
+                <input type="hidden" value="20" />
+        </div>
+      </section>
+    <style>
+      .cart ion-icon {
+         vertical-align: bottom;
+         font-size: 20px;
+         padding-right: 5px;
+      }
+      
+      .cart a {
+          background-color: #158C51;
+          color: #fff;
+          cursor: pointer;
+          text-decoration: none;
+      }
+      
+      .container,
+      .container-products {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-top: 50px;
+          padding-bottom: 100px;;
+      }
+      
+      .image {
+          margin-right: 20px;
+          margin-left: 20px;
+          position: relative;
+          margin-bottom: 20px;
+    
+      }
+      
+      .add-cart {
+        background:#EEE5BB;
+              text-align: center;
+      }
+      
+      .image:hover .cart1,
+      .image:hover .cart2,
+      .image:hover .cart3,
+      .image:hover .cart4 {
+          bottom: 50px;
+          opacity: 1;
+          padding: 10px;
+          text-decoration: none;
+      }</style>
+    <script>let carts = document.querySelectorAll('.add-cart');
+    
+      let products = [ 
+          {
+              name: "blueadidas",
+              tag: "blue adidas",
+              price: 15,
+              inCart: 0
+          },
+          {
+              name: "pink adidas",
+              tag: "pinkadidas",
+              price: 290,
+              inCart: 0
+          },
+          {
+              name: "blue-grey adidas",
+              tag: "blue-greyadidas",
+              price: 15,
+              inCart: 0
+          },
+        
+      ];
+      
+      for(let i=0; i< carts.length; i++) {
+          carts[i].addEventListener('click', () => {
+              cartNumbers(products[i]);
+              totalCost(products[i]);
+          });
+      }
+      
+      function onLoadCartNumbers() {
+          let productNumbers = localStorage.getItem('cartNumbers');
+          if( productNumbers ) {
+              document.querySelector('.cart span').textContent = productNumbers;
+          }
+      }
+      
+      function cartNumbers(product, action) {
+          let productNumbers = localStorage.getItem('cartNumbers');
+          productNumbers = parseInt(productNumbers);
+      
+          let cartItems = localStorage.getItem('productsInCart');
+          cartItems = JSON.parse(cartItems);
+      
+          if( action ) {
+              localStorage.setItem("cartNumbers", productNumbers - 1);
+              document.querySelector('.cart span').textContent = productNumbers - 1;
+              console.log("action running");
+          } else if( productNumbers ) {
+              localStorage.setItem("cartNumbers", productNumbers + 1);
+              document.querySelector('.cart span').textContent = productNumbers + 1;
+          } else {
+              localStorage.setItem("cartNumbers", 1);
+              document.querySelector('.cart span').textContent = 1;
+          }
+          setItems(product);
+      }
+      
+      function setItems(product) {
+          // let productNumbers = localStorage.getItem('cartNumbers');
+          // productNumbers = parseInt(productNumbers);
+          let cartItems = localStorage.getItem('productsInCart');
+          cartItems = JSON.parse(cartItems);
+      
+          if(cartItems != null) {
+              let currentProduct = product.tag;
+          
+              if( cartItems[currentProduct] == undefined ) {
+                  cartItems = {
+                      ...cartItems,
+                      [currentProduct]: product
+                  }
+              } 
+              cartItems[currentProduct].inCart += 1;
+      
+          } else {
+              product.inCart = 1;
+              cartItems = { 
+                  [product.tag]: product
+              };
+          }
+      
+          localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+      }
+      
+      function totalCost( product, action ) {
+          let cart = localStorage.getItem("totalCost");
+      
+          if( action) {
+              cart = parseInt(cart);
+      
+              localStorage.setItem("totalCost", cart - product.price);
+          } else if(cart != null) {
+              
+              cart = parseInt(cart);
+              localStorage.setItem("totalCost", cart + product.price);
+          
+          } else {
+              localStorage.setItem("totalCost", product.price);
+          }
+      }
+      
+      function displayCart() {
+          let cartItems = localStorage.getItem('productsInCart');
+          cartItems = JSON.parse(cartItems);
+      
+          let cart = localStorage.getItem("totalCost");
+          cart = parseInt(cart);
+      
+          let productContainer = document.querySelector('.products');
+          
+          if( cartItems && productContainer ) {
+              productContainer.innerHTML = '';
+              Object.values(cartItems).map( (item, index) => {
+                  productContainer.innerHTML += 
+                  `<div class="product"><ion-icon name="close-circle"></ion-icon><img src="./images/${item.tag}.jpg" />
+                      <span class="sm-hide">${item.name}</span>
+                  </div>
+                  <div class="price sm-hide">$${item.price},00</div>
+                  <div class="quantity">
+                      <ion-icon class="decrease " name="arrow-dropleft-circle"></ion-icon>
+                          <span>${item.inCart}</span>
+                      <ion-icon class="increase" name="arrow-dropright-circle"></ion-icon>   
+                  </div>
+                  <div class="total">$${item.inCart * item.price},00</div>`;
+              });
+      
+              productContainer.innerHTML += `
+                  <div class="basketTotalContainer">
+                      <h4 class="basketTotalTitle">Basket Total</h4>
+                      <h4 class="basketTotal">$${cart},00</h4>
+                  </div>`
+      
+              deleteButtons();
+              manageQuantity();
+          }
+      }
+      
+      function manageQuantity() {
+          let decreaseButtons = document.querySelectorAll('.decrease');
+          let increaseButtons = document.querySelectorAll('.increase');
+          let currentQuantity = 0;
+          let currentProduct = '';
+          let cartItems = localStorage.getItem('productsInCart');
+          cartItems = JSON.parse(cartItems);
+      
+          for(let i=0; i < increaseButtons.length; i++) {
+              decreaseButtons[i].addEventListener('click', () => {
+                  console.log(cartItems);
+                  currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
+                  console.log(currentQuantity);
+                  currentProduct = decreaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g,'').trim();
+                  console.log(currentProduct);
+      
+                  if( cartItems[currentProduct].inCart > 1 ) {
+                      cartItems[currentProduct].inCart -= 1;
+                      cartNumbers(cartItems[currentProduct], "decrease");
+                      totalCost(cartItems[currentProduct], "decrease");
+                      localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+                      displayCart();
+                  }
+              });
+      
+              increaseButtons[i].addEventListener('click', () => {
+                  console.log(cartItems);
+                  currentQuantity = increaseButtons[i].parentElement.querySelector('span').textContent;
+                  console.log(currentQuantity);
+                  currentProduct = increaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g,'').trim();
+                  console.log(currentProduct);
+      
+                  cartItems[currentProduct].inCart += 1;
+                  cartNumbers(cartItems[currentProduct]);
+                  totalCost(cartItems[currentProduct]);
+                  localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+                  displayCart();
+              });
+          }
+      }
+      
+      function deleteButtons() {
+          let deleteButtons = document.querySelectorAll('.product ion-icon');
+          let productNumbers = localStorage.getItem('cartNumbers');
+          let cartCost = localStorage.getItem("totalCost");
+          let cartItems = localStorage.getItem('productsInCart');
+          cartItems = JSON.parse(cartItems);
+          let productName;
+          console.log(cartItems);
+      
+          for(let i=0; i < deleteButtons.length; i++) {
+              deleteButtons[i].addEventListener('click', () => {
+                  productName = deleteButtons[i].parentElement.textContent.toLocaleLowerCase().replace(/ /g,'').trim();
+                 
+                  localStorage.setItem('cartNumbers', productNumbers - cartItems[productName].inCart);
+                  localStorage.setItem('totalCost', cartCost - ( cartItems[productName].price * cartItems[productName].inCart));
+      
+                  delete cartItems[productName];
+                  localStorage.setItem('productsInCart', JSON.stringify(cartItems));
+      
+                  displayCart();
+                  onLoadCartNumbers();
+              })
+          }
+      }
+      
+      onLoadCartNumbers();
+      displayCart();
+      </script>
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    
+    
+    <script>
+     document.getElementById('adidas1').onclick = function() { window.location.href = "/TryNow1.html?sku=carrera_113S_blue";};
+     document.getElementById('adidas2').onclick = function() { window.location.href = "/TryNow1.html?sku=blaze_round_bronze_rougedegrademiroir"; };
+     document.getElementById('adidas3').onclick = function() { window.location.href = "/TryNow1.html?sku=rayban_clubround_bleu_argent_flash"; };
+    
+    </script>
+    
